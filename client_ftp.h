@@ -16,6 +16,7 @@ struct command
 struct command* userinputtocommand(char [LENUSERINPUT]);
 
 void printcommand(struct command*);
+void freecommand(struct command*);
 
 void command_pwd(struct packet*, struct packet*, int);
 void command_lcd(char*);

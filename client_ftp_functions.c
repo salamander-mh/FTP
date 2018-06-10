@@ -111,6 +111,19 @@ void printcommand(struct command* c)
 	printf("\n");
 }
 
+void freecommand(struct command* c)
+{
+	if (c->npaths > 0)
+	{
+		// free strings
+		for(i = 0; i < c->npaths; i++)
+			free(c->paths[i]);
+		free(c->npaths);
+	}
+	free(c);
+}
+
+
 void command_pwd(struct packet* chp, struct packet* data, int sfd_client)
 {
 	int x;

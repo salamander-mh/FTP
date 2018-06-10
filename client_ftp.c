@@ -138,6 +138,7 @@ int main(int argc, char* argv[])
 				// display error
 				break;
 		}
+		freecommand(cmd);
 	}
 	outside_client_command_loop:
 	
@@ -170,6 +171,7 @@ int main(int argc, char* argv[])
 	*/
 
 	close(sfd_client);
+	freecommand(cmd);
 	printf(ID "Done.\n");
 	fflush(stdout);
 	
