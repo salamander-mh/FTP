@@ -133,7 +133,10 @@ int main(int argc, char* argv[])
 					fprintf(stderr, "Wrong path.\n");
 				break;
 			case EXIT:
+			{
+				freecommand(cmd);
 				goto outside_client_command_loop;
+			}
 			default:
 				// display error
 				break;
@@ -171,7 +174,6 @@ int main(int argc, char* argv[])
 	*/
 
 	close(sfd_client);
-	freecommand(cmd);
 	printf(ID "Done.\n");
 	fflush(stdout);
 	

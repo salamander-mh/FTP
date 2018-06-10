@@ -115,6 +115,7 @@ void freecommand(struct command* c)
 {
 	if (c->npaths > 0)
 	{
+		int i;
 		// free strings
 		for(i = 0; i < c->npaths; i++)
 			free(c->paths[i]);
