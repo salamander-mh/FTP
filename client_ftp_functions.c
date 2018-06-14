@@ -119,7 +119,7 @@ void freecommand(struct command* c)
 		// free strings
 		for(i = 0; i < c->npaths; i++)
 			free(c->paths[i]);
-		free(c->npaths);
+		free(c->paths);
 	}
 	free(c);
 }
